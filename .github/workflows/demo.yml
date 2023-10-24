@@ -11,4 +11,8 @@ jobs:
               run: pip install pyinstaller
             - name: build exe
               run: pyinstaller sha256.py -F
-                
+            - name: Archive code coverage results
+              uses: actions/upload-artifact@v3
+              with:
+                name: python-sha256-exe
+                path: dist/sha256.exe   
